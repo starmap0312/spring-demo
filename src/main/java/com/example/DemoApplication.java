@@ -21,13 +21,13 @@ public class DemoApplication {
 
 	// Build an executable JAR:
 	// you can build a single executable JAR file that contains all the necessary dependencies, classes, and resources and run the JAR
-	// ex1. use gradle wrapper
+	// ex1. use gradle wrapper (so that you do not need to install gradle)
 	//     ./gradlew build (build the JAR)
 	//     java -jar build/libs/demo-0.0.1-SNAPSHOT.jar (run the JAR)
-	// ex2. use mvn wrapper
+	// ex2. use maven wrapper (so that you do not need to install maven)
 	//     ./mvnw clean package (build the JAR)
 	//     java -jar target/demo-0.0.1-SNAPSHOT.jar (run the JAR)
-	// ex3. use mvn
+	// ex3. install and use maven
 	//     mvn install (build the JAR)
 	//     java -jar target/demo-0.0.1-SNAPSHOT.jar (run the JAR)
 }
