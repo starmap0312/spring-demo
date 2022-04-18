@@ -2,12 +2,12 @@
 
 # run the service
 ```
-./mvnw spring-boot:run.  
+./mvnw spring-boot:run  
 ```
-or.
+or
 ```
-./mvnw clean package (build the JAR).  
-java -jar target/demo-0.0.1-SNAPSHOT.jar (run the JAR).  
+./mvnw clean package (build the JAR)  
+java -jar target/demo-0.0.1-SNAPSHOT.jar (run the JAR)  
 ```
 
 # test the service
