@@ -1,10 +1,14 @@
 # spring-demo
 
 # run the service
+```
 ./mvnw spring-boot:run.  
-or.  
+```
+or.
+```
 ./mvnw clean package (build the JAR).  
 java -jar target/demo-0.0.1-SNAPSHOT.jar (run the JAR).  
+```
 
 # test the service
 http://localhost:8080/hello.  
