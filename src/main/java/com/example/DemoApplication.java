@@ -81,6 +81,12 @@ public class DemoApplication {
 				log.info(customer.toString());
 			}
 			log.info("");
+			// == Customers found with findAll():
+			// Customer[id=1, firstName='Jack', lastName='Bauer']
+			// Customer[id=2, firstName='Chloe', lastName='O'Brian']
+			// Customer[id=3, firstName='Kim', lastName='Bauer']
+			// Customer[id=4, firstName='David', lastName='Palmer']
+			// Customer[id=5, firstName='Michelle', lastName='Dessler']
 
 			// fetch an individual customer by ID
 			Customer customer = repository.findById(1L);
@@ -88,6 +94,8 @@ public class DemoApplication {
 			log.info("--------------------------------");
 			log.info(customer.toString());
 			log.info("");
+			// == Customer found with findById(1L):
+			// Customer[id=1, firstName='Jack', lastName='Bauer']
 
 			// fetch customers by last name
 			log.info("Customer found with findByLastName('Bauer'):");
@@ -95,23 +103,14 @@ public class DemoApplication {
 			repository.findByLastName("Bauer").forEach(bauer -> {
 				log.info(bauer.toString());
 			});
+			// == Customer found with findByLastName('Bauer'):
+			// Customer[id=1, firstName='Jack', lastName='Bauer']
+			// Customer[id=3, firstName='Kim', lastName='Bauer']
+
 			// for (Customer bauer : repository.findByLastName("Bauer")) {
 			//  log.info(bauer.toString());
 			// }
 			log.info("");
 		};
-		// == Customers found with findAll():
-		// Customer[id=1, firstName='Jack', lastName='Bauer']
-		// Customer[id=2, firstName='Chloe', lastName='O'Brian']
-		// Customer[id=3, firstName='Kim', lastName='Bauer']
-		// Customer[id=4, firstName='David', lastName='Palmer']
-		// Customer[id=5, firstName='Michelle', lastName='Dessler']
-		//
-		// == Customer found with findById(1L):
-		// Customer[id=1, firstName='Jack', lastName='Bauer']
-		//
-		// == Customer found with findByLastName('Bauer'):
-		// Customer[id=1, firstName='Jack', lastName='Bauer']
-		// Customer[id=3, firstName='Kim', lastName='Bauer']
 	}
 }
