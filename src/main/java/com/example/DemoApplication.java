@@ -3,12 +3,14 @@ package com.example;
 import com.example.accessingdatajpa.Customer;
 import com.example.accessingdatajpa.CustomerRepository;
 import com.example.consumingrest.Quote;
+import com.example.restservice.GreetingController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,13 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController // marks the class as a controller where every method returns a data object instead of a view, i.e. @Controller + @ResponseBody
-@SpringBootApplication // @Configuration: tags the class as a source of bean definitions for the application context + @ComponentScan: tells Spring to look for controllers in the "com/example" package
+@SpringBootApplication // @Configuration: tags the class as a source of bean definitions for the application context + @ComponentScan: tells Spring to look for controllers in the same package, i.e. "com/example"
 public class DemoApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args); // use SpringApplication.run() method to launch the application
+		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args); // use SpringApplication.run() method to launch the application, which returns an ApplicationContext
+		GreetingController bean = ctx.getBean(GreetingController.class); // the ApplicationContext can be used to get any bean instance via the bean's class
 	}
 
 	// demo 1: define a simple API
