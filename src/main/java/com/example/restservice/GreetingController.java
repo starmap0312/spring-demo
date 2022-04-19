@@ -8,6 +8,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 // build a simple RESTful web service
 // ref: https://spring.io/guides/gs/rest-service/
+
+// @Controller: a meta-annotation of @Component
 @RestController // marks the class as a controller where every method returns a data object instead of a view, i.e. @Controller + @ResponseBody
 public class GreetingController {
 

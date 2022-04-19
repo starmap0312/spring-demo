@@ -17,8 +17,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+// ref: https://www.baeldung.com/spring-bean-annotations
+// ref: https://www.baeldung.com/spring-component-repository-service
+// @Component: a primitive class level annotation
+// - @Configuration/@Controller/@Service/@Repository are all meta-annotations of @Component, i.e. @Service/@Repository are special cases of @Component used for different purposes
+// - during the component scan, spring automatically detects classes annotated with @Component
+// @Configuration: this allows the class to contain bean definition methods (i.e. methods with @Bean annotations)
+// @Controller: this class serves as a controller in spring MVC framework
+// @Service: the business logic of an application usually resides within the service layer
+// @Repository: the DAO (Data Access Object) class which represents the database access layer in an application; a persistence layer which acts as a database repository
+
+// Spring Annotations
+// - a typical application have distinct layers, ex. data access (M), presentation (V), controller (C) or service (business logic) layers
+// - each layer contains various beans (@Bean)
+// - spring detects beans automatically, using classpath scanning annotations
+// - each bean is registered in the ApplicationContext
+
+// @Configuration: this tags the class as a source of bean definitions for the application context, i.e. this allows the class to contain methods annotated with @Bean (i.e. bean definitions)
+// @ComponentScan: spring can automatically scan a package for components, ex. this tells spring where to look for components/controllers (default scope: in the same package, i.e. "com/example")
 @RestController // marks the class as a controller where every method returns a data object instead of a view, i.e. @Controller + @ResponseBody
-@SpringBootApplication // @Configuration: tags the class as a source of bean definitions for the application context + @ComponentScan: tells Spring to look for controllers in the same package, i.e. "com/example"
+@SpringBootApplication // @Configuration + @ComponentScan
 public class DemoApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
