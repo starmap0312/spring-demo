@@ -16,13 +16,6 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
-	<repositories>
-		<repository>
-			<id>mavenorg</id>
-			<name>maven org</name>
-			<url>https://artifactory.ouroath.com/artifactory/maven-org-cache/</url>
-		</repository>
-	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
